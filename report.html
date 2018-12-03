@@ -208,9 +208,46 @@
       </div>
       <div class="row" style="margin-top:5rem" id="approval">
         <div class="col-lg-10 col-md-9 col-sm-8">
-
           <h5>Do the Sentiments of Articles about Trump Reflect His Approval Rating?</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>President Donald Trump is on of the hottests topics of discussion in news, biased news included. In order to understand how the content of biased news articles interacts with his approval rating, will test the following:<br>Do the sentiments of articles talking about Trump reflect his approval rating in any way, and how is the sentiment of the two sites different on this issue?<br>I got approval rating information from the American Presidency Project <a href="https://www.presidency.ucsb.edu/statistics/data/presidential-job-approval">here.</a> Using this data and matplotlib, I created some visualizations to help identify trends.</p>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/trump/monthTrumpSentiment.png" width="100%"/>
+          <caption>The sentiment of all articles referencing Donald Trump, averaged by month.<br>This plot shows the combined sentiment of article titles and bodies by month, as well as Trump's month approval rating. Both variables were normalized from 0-1 for scale.<br>It seems that there is little correlation between the approval rating and sentiment lines. At some points in the plot, the variables appear to increase similarly. However, there are just as many times that the lines move in an inverse manner.<br>Maybe this is a result of both liberal and conservative articles sharing a variable. I'll plot the sites individually to compare.</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-5 col-md-4 col-sm-4">
+          <img src="Assets/visualizations/trump/monthlyTrumpTP.png" width="100%"/>
+          <caption>The sentiment of all Think Progress articles referencing Donald Trump, averaged by 2 months.<br></caption>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-4">
+          <img src="Assets/visualizations/trump/monthlyTrumpBlaze.png" width="100%"/>
+          <caption>The sentiment of all The Blaze articles referencing Donald Trump, averaged by 2 months.<br></caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/trump/monthlyTrumpBoth.png" width="100%"/>
+          <caption>The sentiment of both sites' articles referencing Donald Trump, averaged by 2 months.<br></caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-5 col-md-4 col-sm-4">
+          <img src="Assets/visualizations/trump/TrumpCorrTP.png" width="100%"/>
+          <caption>The correlation matrix of variables in Think Progress articles referencing Donald Trump.<br></caption>
+        </div>
+        <div class="col-lg-5 col-md-4 col-sm-4">
+          <img src="Assets/visualizations/trump/TrumpCorrBlaze.png" width="100%"/>
+          <caption>The correlation matrix of variables in The Blaze articles referencing Donald Trump.<br></caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/trump/trumpCorrBoth.png" width="75%" style="margin-right:25%"/>
+          <caption>The correlation matrix of variables in all articles referencing Donald Trump.<br></caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="clickbait">
