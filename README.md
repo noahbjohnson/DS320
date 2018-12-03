@@ -4,4 +4,4 @@ DS320 Final Project<br>
 Dr. Kent Lee<br>
 Luther College, Decorah IA<br>
 #
-Please view this project on github pages [here](noahbjohnson.github.io/DS320)
+Please view this project on github pages [here](https://noahbjohnson.github.io/DS320)
