@@ -1,7 +1,7 @@
 # An Analysis of Politically Biased News
-Noah B Johnson
-DS320 Final Project
-Dr. Kent Lee
-Luther College, Decorah IA
+Noah B Johnson<br>
+DS320 Final Project<br>
+Dr. Kent Lee<br>
+Luther College, Decorah IA<br>
 #
-My final project for DS320 at Luther College
+Please view this project on github pages [here](noahbjohnson.github.io/DS320)
