@@ -161,12 +161,31 @@
           <p>With all of the grunt work out of the way, I began my analysis. The following are the questions I asked, the visualizations I used, and the conclusions I reached.</p>
 
           <h5 style="margin-top:2rem">Is News Getting More Negative?</h5>
-          <p>It seems that the news these days has been getting more and more negative. With the wide variety of available news sources, those with the most shocking stories often profit. I set out to test this hypothesis: Is news getting more negative?</p>
+          <p>It seems that the news these days has been getting more and more negative. With the wide variety of available news sources, those with the most shocking stories often profit. I set out to test this hypothesis: Is news getting more negative? Using matplotlib, I created some visualizations to help identify trends.</p>
         </div>
       </div>
-      <div class="row" style="margin-top:5rem" id="negativity">
+      <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          
+          <img src="Assets/visualizations/negativity/monthlySentiment.png" width="100%"/>
+          <caption>All articles' sentiment, averaged by month.<br> There are some interesting relationships in this plot of monthly sentiment, but the resolution is too high to identify any real trends. </caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/negativity/bimonthlySentiment.png" width="100%"/>
+          <caption>All articles' sentiment, averaged by every two months.<br> The lower resolution on this plot makes it easier to identify that there is a visible, non-linear downward trend in sentiment.</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/negativity/quarterlySentiment.png" width="100%"/>
+          <caption>All articles' sentiment, averaged by every three months.<br> The even lower resolution on this plot shows that there has actually been a recent increase in article sentiment. While there is still a visible downward trend, this is not consistant throughout the plot.</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/negativity/linearSentiment.png" width="100%"/>
+          <caption>All articles' predicted sentiment, modeled by OLS linear regression.<br>When a simple linear model is applied to the sentiment variables, a trend is much more visible.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="approval">
