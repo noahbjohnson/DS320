@@ -33,7 +33,7 @@
         </ul>
       </div>
     </nav>
-    
+
 
     <div class="container">
      <div class="page-header" id="title">
@@ -85,6 +85,17 @@
 
           <h5>Think Progress</h5>
           <p>Data collection for thinkprogress.org was much easier than the Blaze. I located the site’s RSS feed URL, and fed it into Python feedParser. Using the Wayback Machine from archive.org, I accessed historical RSS feed copies. The availability of the RSS feed allowed me to directly extract variables without needing to parse HTML.</p>
+
+          <h5>Variables</h5>
+          <p>At the end of the process, I had the following variables for both sites:</p>
+          <ul>
+            <li>Article Title</li>
+            <li>Article Body</li>
+            <li>Article Author</li>
+            <li>Article Published Date</li>
+            <li>Article URL</li>
+            <li>Article Site</li>
+          </ul>
         </div>
       </div>
 
@@ -95,15 +106,14 @@
           <h3>Data Cleaning</h3>
           <a href="downloads.html">View the Notebook</a>
 
-
           <h5 style="margin-top:1rem">Encoding</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>After collecting the data from both sites, I needed to clean the text to ensure maximum performance from sentiment analysis and topic modeling. The first step was to remove or convert the plethora of unicode characters that were in the article bodies. I used unicodedata.normalize() to extract ASCII text from the article bodies.</p>
 
           <h5>Data Types</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>Next, I had to ensure that the datatypes were correctly interpreted in the data-frame, as they were mostly represented by strings in the original database. I converted author and site to categorical variables, and article published timestamp to date-time.</p>
 
           <h5>Metadata</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>Finally, I constructed two metadata fields: Body Length in Characters, and Title Length in Characters. It was important to have these fields because many of the APIs for sentiment and topic modeling charge by 100 characters. It was also important to be able to estimate the time to compute a model locally if I decided to do so.</p>
         </div>
       </div>
 
@@ -113,11 +123,32 @@
 
           <h3>Text Processing</h3>
           <a href="downloads.html">View the Notebooks</a>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula.</p>
+          <p>Most of the data that I scraped is next to useless on its own. I needed to add more information to the dataset in order to make any visualizations or conclusions.</p>
           <h5 style="margin-top:1rem">Basic Sentiment with Vader</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>I have very little experience in text-processing machine learning. Therefore, I decided that the best place to start would be an easy-to-use pre-trained model. It seems that the Vader model from the Natural Language Toolkit is widely used and accepted. I used the Text-Blob package to create a nice wrapper around the model, and was able to add the following columns:</p>
+          <ul>
+            <li>Title Polarity</li>
+            <li>Title Subjectivity</li>
+            <li>Body Polarity</li>
+            <li>Body Subjectivity</li>
+          </ul>
+
           <h5>indico.io Models</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>I needed a better sentiment model in my dataset, but I didn’t want to spend countless hours training custom models on my local machine. After some deliberation, I decided that I would use a pre-trained sentiment analysis API. I’ve used Google Cloud ML and Amazon Comprehend before, but their pricing structure is geared towards live applications. Ultimately I decided to try the apis on indicio.io. They have great reviews, and good academic discounts. (Luckily for me they were offering free API usage as recompense for previous outages.) Using their python wrapper, I added the following columns:</p>
+          <ul>
+            <li>Title Sentiment</li>
+            <li>Body Sentiment</li>
+            <li>HQ (combined) Sentiment</li>
+            <li>Title Political Lean</li>
+            <li>Body Political Lean</li>
+            <li>Title Emotion</li>
+            <li>Body Emotion</li>
+            <li>People Referenced</li>
+            <li>Places Referenced</li>
+            <li>Organizations Referenced</li>
+            <li>Keywords</li>
+            <li>Text Tags</li>
+          </ul>
         </div>
       </div>
 
