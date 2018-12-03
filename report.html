@@ -58,30 +58,38 @@
       <div class="row">
           <div class="col-lg-3 col-md-3 col-sm-3">
             <img src="Assets/theblaze.png" width="225vw"/>
+            <img src="Assets/blazebias.png" width="225vw" style="background: white"/>
+            <i>mediabiasfactcheck.com</i>
           </div>
           <div class="col-lg-3 col-md-3 col-sm-3">
             <img src="Assets/thinkprogress.png" width="225vw"/>
+            <img src="Assets/tpbias.png" width="225vw" style="background: white"/>
+            <i>mediabiasfactcheck.com</i>
           </div>
+
+
       </div>
       <div class="row" style="margin-top:5rem" id="collection">
         <div class="col-lg-10 col-md-9 col-sm-8">
 
           <h3>Data Collection</h3>
-          <a href="downloads.html">View the Notebook</a>
+          <a href="downloads.html">View the Notebooks</a>
 
           <h5 style="margin-top:1rem">The Blaze</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>To collect data from theblaze.com articles, I took advantage of Wordpress’s predictable archival URL structure. A list of all the articles published in a day is available at theblaze.com/news/[year]/[month]/[day]. I was able to iterate through the dates to collate a list of article URLs to scrape. I then iterated over this list and used python’s BeautifulSoup to extract my data from the html.</p>
 
           <h5>Think Progress</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>Data collection for thinkprogress.org was much easier than the Blaze. I located the site’s RSS feed URL, and fed it into Python feedParser. Using the Wayback Machine from archive.org, I accessed historical RSS feed copies. The availability of the RSS feed allowed me to directly extract variables without needing to parse HTML.</p>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="cleaning">
         <div class="col-lg-10 col-md-9 col-sm-8">
 
           <h3>Data Cleaning</h3>
+          <a href="downloads.html">View the Notebook</a>
 
-          <h5>Encoding</h5>
+
+          <h5 style="margin-top:1rem">Encoding</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
 
           <h5>Data Types</h5>
@@ -95,8 +103,9 @@
         <div class="col-lg-10 col-md-9 col-sm-8">
 
           <h3>Text Processing</h3>
+          <a href="downloads.html">View the Notebooks</a>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula.</p>
-          <h5>Basic Sentiment with Vader</h5>
+          <h5 style="margin-top:1rem">Basic Sentiment with Vader</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
           <h5>indico.io Models</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
@@ -106,8 +115,9 @@
         <div class="col-lg-10 col-md-9 col-sm-8">
 
           <h3>Data Analysis</h3>
+          <a href="downloads.html">View the Notebook</a>
 
-          <h5>Is News Getting More Negative?</h5>
+          <h5 style="margin-top:1rem">Is News Getting More Negative?</h5>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
 
           <h5>Do the Sentiments of Articles about Trump Reflect His Approval Rating?</h5>
