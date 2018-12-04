@@ -219,7 +219,7 @@
             <li>The sentiment of biased news is not linear over time.</li>
             <li>The sentiment of biased news titles is slightly increasing over time.</li>
             <li>The sentiment of biased news bodies is slightly decreasing over time.</li>
-            <li>The average entiment of biased news articles is not changing significantly over time</li>
+            <li>The average sentiment of biased news articles is not changing significantly over time</li>
           </ul>
         </div>
       </div>
@@ -248,30 +248,46 @@
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/trump/monthlyTrumpBoth.png" width="100%"/>
-          <caption>The sentiment of both sites' articles referencing Donald Trump, averaged by 2 months.<br></caption>
+          <caption>The sentiment of both sites' articles referencing Donald Trump, averaged by 2 months.<br>It looks like there are many similarities in the movement of the article and approval lines. However, there are also many differences. If the sentiments were transformed somehow, or fed into a more complex model, there may be higher correlation.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+      <h6>Checking for Other Potential Correlations</h6>
+    </div></div>
+      <div class="row" style="margin-top:1rem">
         <div class="col-lg-5 col-md-4 col-sm-4">
           <img src="Assets/visualizations/trump/TrumpCorrTP.png" width="100%"/>
-          <caption>The correlation matrix of variables in Think Progress articles referencing Donald Trump.<br></caption>
+          <caption>The correlation matrix of variables in Think Progress articles referencing Donald Trump.<br>The most correlated variables with Trump's approval rating are: Sentiment(.24), Date(.27), and Libertarian Lean(.29)</caption>
         </div>
         <div class="col-lg-5 col-md-4 col-sm-4">
           <img src="Assets/visualizations/trump/TrumpCorrBlaze.png" width="100%"/>
-          <caption>The correlation matrix of variables in The Blaze articles referencing Donald Trump.<br></caption>
+          <caption>The correlation matrix of variables in The Blaze articles referencing Donald Trump.<br>The most correlated variables with Trump's approval rating are: Sentiment(.35), Conservative Lean(.28), Liberal Lean(.32), and Libertarian Lean (-.34).</caption>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/trump/trumpCorrBoth.png" width="75%" style="margin-right:25%"/>
-          <caption>The correlation matrix of variables in all articles referencing Donald Trump.<br></caption>
+          <caption>The correlation matrix of variables in all articles referencing Donald Trump.<br>The most correlated variables with Trump's approval rating are: Sentiment(.37), Conservative Lean(.25), and Date(.23).</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <h6>Findings</h6>
+          <ul>
+            <li>The sentiment of biased news does not correlate very well directly with Trump's approval rating.(.37)</li>
+            <li>The sentiment of biased news over time does share most of the general shape of Trump's approval rating, suggesting that it could be significant in a model or after transformation.</li>
+            <li>Think Progress articles with Libertarian lean correlate higher with Trump's Approval rating. This is interesting, considering that it is a progressive site.</li>
+            <li>The Blaze articles with Conservative and Liberal Lean correlate higher with Trump's approval rating, but those with Libertarian lean correlate negatively.</li>
+            <li>Overall, articles with Conservative lean correlate higher with Trump's approval rating.</li>
+          </ul>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="clickbait">
         <div class="col-lg-10 col-md-9 col-sm-8">
 
           <h5>Clickbait!? Do Article's Titles Express More Emotion Than Their Bodies?</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>Clickbait is when titles or summaries of articles are designed to entice users to read. Headlines are often exaggerated, sensationalized, and sometimes downright false.<br>Like many other entertainment sources, politically biased news sites often employ clickbait tactics to drive readership.<br>By exploring the relationship between sentiment and emotion in articles' titles and bodies with plots, I hope to identify quantifiable characteristics of politically biased clickbait.</p>
         </div>
         <div class="row" style="margin-top:5rem">
         <div class="col-lg-5 col-md-4 col-sm-4">
@@ -286,27 +302,48 @@
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/emotion/diffMonthly.png" width="100%"/>
-          <caption>Difference in Emotions Expressed in Articles by Month (Title-Body)<br></caption>
+          <caption>Difference in Emotions Expressed in Articles by Month (Title-Body)<br>This plot shows that most emotions do not appear in the title of articles more than the body. The exception to this is surprise, which almost always appears more in the title than body. This makes sense, as biased news sources often sensationalize.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/emotion/diffMonthlyLine.png" width="100%"/>
-          <caption>Difference in Emotions Expressed in Articles by Month (Title-Body)<br></caption>
+          <caption>Difference in Emotions Expressed in Articles by Month (Title-Body)<br>Plotting the same data as the previous figure in a line plot allows for more detailed analysis of the trends. Previously, the difference in fear was not visible. Now we know that it is the most significant.<br>This plot shows that the difference in emotion is most significant with Anger, Sadness, and Surprise.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/emotion/diffHist.png" width="100%"/>
-          <caption>Histograme of Difference in Emotions Expressed in Articles (Title-Body)<br></caption>
+          <caption>Histogram of Difference in Emotions Expressed in Articles (Title-Body)<br>This histogram shows that the majority of emotion differences fall within a normal distribution, suggesting that there is not significant difference in overall emotionality.</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+      <div class="col-lg-5 col-md-4 col-sm-4">
+        <img src="Assets/visualizations/emotion/tpDiff.png" width="100%" style="background: white"/>
+        <caption>Difference in Emotions Expressed in Think Progress Articles by Month<br></caption>
+      </div>
+      <div class="col-lg-5 col-md-4 col-sm-4">
+        <img src="Assets/visualizations/emotion/blazeDiff.png" width="100%" style="background: white"/>
+        <caption>Difference in Emotions Expressed in The Blaze Articles by Month<br></caption>
+      </div>
+    </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <h6>Findings</h6>
+          <ul>
+            <li>Biased news articles tend to have more anger in their titles than bodies.</li>
+            <li>Biased news articles also tend to have more surprise in their titles than bodies</li>
+            <li>Biased news articles tend to have much less sadness in their titles than their bodies.</li>
+            <li>The total difference in emotion between titles and bodies is not significant</li>
+            <li>There is not a significant difference in sentiment defecit between The Blaze and Think Progress.</li>
+          </ul>
         </div>
       </div>
       </div>
       <div class="row" style="margin-top:5rem" id="correlation">
         <div class="col-lg-10 col-md-9 col-sm-8">
-
           <h5>Is the Sentiment or Emotion of an Article Correlated with its Policial Lean?</h5>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis suscipit mi quis ipsum gravida interdum. Etiam vel sagittis mi. Aliquam in odio ultrices, ultricies lectus et, venenatis sem. Vestibulum porttitor libero molestie, mattis nibh eget, aliquet metus. Suspendisse eu quam felis. Phasellus posuere felis ligula. Vivamus tincidunt erat non finibus efficitur. Phasellus a posuere orci. Aenean in ultricies nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae;</p>
+          <p>Both sites in my dataset are pretty extreme, so it will be interesting to see the results of these graphs.<br>I have no prediction as to how sentiment and political lean will interact. Ideally, the following plots will provide enough evidence to support findings.<br>I will first examine the emotion and sentiment of the two sites, and then explore the effects of political lean.</p>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
@@ -322,6 +359,11 @@
         <div class="col-lg-6 col-md-4 col-sm-4">
           <img src="Assets/visualizations/leanSentiment/blazePie.png" width="100%"/>
           <caption>The ratio of emotions expressed in The Blaze articles.<br></caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:1rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <p>There is negligible difference between the ratios of emotions observed on the two sites.  The largest change is in anger, which is 4% higher on Think Progress. All other changes combined add up to 4.5%</p>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
@@ -433,6 +475,14 @@
                 <td><img src="Assets/visualizations/issues/education/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazePlot.png" width="150vw"></td>
+                <td></td>
+              </tr>
+              <tr class="table-dark">
+                <th scope="row">Religion</th>
+                <td><img src="Assets/visualizations/issues/religion/tpHist.png" width="150vw"></td>
+                <td><img src="Assets/visualizations/issues/religion/tpPlot.png" width="150vw"></td>
+                <td><img src="Assets/visualizations/issues/religion/blazeHist.png" width="150vw"></td>
+                <td><img src="Assets/visualizations/issues/religion/blazePlot.png" width="150vw"></td>
                 <td></td>
               </tr>
             </tbody>
