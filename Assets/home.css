@@ -3,3 +3,6 @@ body {
   padding-top: 6.5rem;
   width: 100%;
 }
+table, th, td {
+    border: 1px solid white;
+}
