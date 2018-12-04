@@ -390,29 +390,31 @@
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/leanSentiment/leanLines.png" width="100%"/>
-          <caption>The Policial Lean of Articles by Sentiment<br></caption>
-        </div>
-      </div>
-      <div class="row" style="margin-top:1rem">
-        <div class="col-lg-10 col-md-9 col-sm-8">
-          <img src="Assets/visualizations/leanSentiment/leanLinesReg.png" width="100%"/>
-          <caption>The Linear Regressed Policial Lean of Articles by Sentiment<br></caption>
-        </div>
-      </div>
-      <div class="row" style="margin-top:1rem">
-        <div class="col-lg-10 col-md-9 col-sm-8">
-          <img src="Assets/visualizations/leanSentiment/quartilePie.png" width="100%"/>
-          <caption>The Ratio of Political Lean by Sentiment Quartile<br></caption>
+          <caption>The Policial Lean of Articles by Sentiment<br>This plot shows a pretty clear negative relationship between conservative lean and sentiment, and a positive one with grean lean and sentiment.<br>Libertarian and Liberal lean have no visibly identifiable trendline.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
-        <div class="col-lg-6 col-md-4 col-sm-4">
-          <img src="Assets/visualizations/leanSentiment/tpHist.png" width="100%"/>
-          <caption>The histogram of sentiment in Think Progress articles.<br></caption>
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/leanSentiment/leanLinesReg.png" width="100%"/>
+          <caption>The Linear Regressed Policial Lean of Articles by Sentiment<br>As I suspected from the previous plot, there are two very strong relationships.<br>Green lean is highly correlated with article sentiment, and Conservative lean is very negatively correlated.<br>The other two leans have a very slight negative correlation.</caption>
         </div>
-        <div class="col-lg-6 col-md-4 col-sm-4">
-          <img src="Assets/visualizations/leanSentiment/blazeHist.png" width="100%"/>
-          <caption>The histogram of sentiment in The Blaze articles.<br></caption>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <img src="Assets/visualizations/leanSentiment/quartilePie.png" width="100%"/>
+          <caption>The Ratio of Political Lean by Sentiment Quartile<br>This plot tells pretty much the same story as the last. Green increases with sentiment, and Conservative decreases.</caption>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <h6>Findings</h6>
+          <ul>
+            <li>The emotions expressed on Think Progress and The Blaze are very similar.</li>
+            <li>The sentiment density of Think Progress appears to have a minor bimodal distribution, while The Blaze's is right skewed, but mostly flat. This means that The Blaze has more articles with a moderate sentiment, and Think Progress has more articles at the extremes.</li>
+            <li>The more Green political lean expressed in a article, the higher the sentiment.</li>
+            <li>The more conservative sentiment expresses in an article, the lower the sentiment.</li>
+            <li>The most positive quarter of articles have 27.9% Liberal Lean, 26.3% Green Lean, 25% Libertarian Lean, and 20.8% Conservative Lean.</li>
+          </ul>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="issues">
