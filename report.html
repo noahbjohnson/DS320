@@ -69,11 +69,11 @@
         <div class="col-lg-10 col-md-9 col-sm-8">
           <h3>Overview</h3>
 
-          <h5>Background</h5>
+          <h4>Background</h4>
           <p><a href="https://news.gallup.com/poll/225755/americans-news-bias-name-neutral-source.aspx">According to Gallup polls</a>, 45% of Americans see “a great deal of bias” in the current news media. For reference, that number was 25% in 1989. With numbers like it’s easy to see that the concept of “fake news” is relevant to many Americans, but how can we measure bias in the media?</p>
           <p>Sites like mediabiasfactcheck.com try to examine the bias of various news outlets and report on their findings. They use a variety of methods including identifying biased wording, story choices, and factuality. There are a few other sites with different methodologies, but the reality of social media echo-chambers means that their impact on media consumers is negligible.</p>
 
-          <h5>Procedure</h5>
+          <h4>Procedure</h4>
           <p>In this report, I collected and examined articles from two biased news sites. Theblaze.com is a conservative news platform founded by conservative commentator Glenn Beck. On the liberal side, thinkprogress.org is a progressive political news blog run by the Center for American Progress. The center is, according to Wikipedia, a public policy research and advocacy organization which presents a liberal viewpoint on economic and social issues. Both of these sites are near the extreme end of their respective political biases, and they both often have their content go viral on social media. This makes them a perfect pair for analyzing the issue of media bias.</p>
           <p>I used the pre-trained text analysis models from <a href="https://indico.io/">indico.io</a> and the Natural Language Toolkit(NLTK) to generate variables for analysis. Using these variables, I created visualizations using Matplotlib and Seaborn to visually identify patterns in the data. The methods used in this report, although quantitative, are not necessarily statistically valid, and may include subjective suppositions.</p>
 
@@ -89,10 +89,10 @@
                 <i>mediabiasfactcheck.com</i>
               </div>
           </div>
-          <h5 style="margin-top:2rem">Potential Algorithmic Bias</h5>
+          <h4 style="margin-top:2rem">Potential Algorithmic Bias</h4>
           <p>The models I used for feature construction were pre-trained on unknown data sets. Due to the nature of pre-trained models, there may be a degree of bias against various viewpoints in the results of my analysis. I've done my best to mitigate this issue by normalizing where possible. However, there still remains a potential for bias, as the models were not tested for objectivity.</p>
 
-          <h5>Legal</h5>
+          <h4>Legal</h4>
           <p>The terms of service on theblaze.com specifically prohibit the type of programmatic access and scraping used in this project. Both sites also prohibit archiving, downloading, or reproducing their content.</p>
           <p>The law on programmatic scraping is murky at best, but I consider my access and use of article content and media to be protected under fair use and the first amendment for the sole purpose of academic research. This position is supported in earnest by <a href="https://h2o.law.harvard.edu/collages/45977">CHRISTIAN W. SANDVIG, et al. v. JEFFERSON B. SESSIONS III, in his official capacity as Attorney General of the United States.</a></p>
           <p>The analysis provided in this report is solely the responsibility of the author, and does not represent the views or opinions of Luther College or its faculty.
@@ -105,13 +105,13 @@
           <h3>Data Collection</h3>
           <a href="downloads.html">View the Notebooks</a>
 
-          <h5 style="margin-top:1rem">The Blaze</h5>
+          <h4 style="margin-top:1rem">The Blaze</h4>
           <p>To collect data from theblaze.com articles, I took advantage of Wordpress’s predictable archival URL structure. A list of all the articles published in a day is available at theblaze.com/news/[year]/[month]/[day]. I was able to iterate through the dates to collate a list of article URLs to scrape. I then iterated over this list and used python’s BeautifulSoup to extract my data from the html.</p>
 
-          <h5>Think Progress</h5>
+          <h4>Think Progress</h4>
           <p>Data collection for thinkprogress.org was much easier than the Blaze. I located the site’s RSS feed URL, and fed it into Python feedParser. Using the Wayback Machine from archive.org, I accessed historical RSS feed copies. The availability of the RSS feed allowed me to directly extract variables without needing to parse HTML.</p>
 
-          <h5>Variables</h5>
+          <h4>Variables</h4>
           <p>At the end of the process, I had the following variables for both sites:</p>
           <ul>
             <li>Article Title</li>
@@ -131,13 +131,13 @@
           <h3>Data Cleaning</h3>
           <a href="downloads.html">View the Notebook</a>
 
-          <h5 style="margin-top:1rem">Encoding</h5>
+          <h4 style="margin-top:1rem">Encoding</h4>
           <p>After collecting the data from both sites, I needed to clean the text to ensure maximum performance from sentiment analysis and topic modeling. The first step was to remove or convert the plethora of unicode characters that were in the article bodies. I used unicodedata.normalize() to extract ASCII text from the article bodies.</p>
 
-          <h5>Data Types</h5>
+          <h4>Data Types</h4>
           <p>Next, I had to ensure that the datatypes were correctly interpreted in the data-frame, as they were mostly represented by strings in the original database. I converted author and site to categorical variables, and article published timestamp to date-time.</p>
 
-          <h5>Metadata</h5>
+          <h4>Metadata</h4>
           <p>Finally, I constructed two metadata fields: Body Length in Characters, and Title Length in Characters. It was important to have these fields because many of the APIs for sentiment and topic modeling charge by 100 characters. It was also important to be able to estimate the time to compute a model locally if I decided to do so.</p>
         </div>
       </div>
@@ -149,7 +149,7 @@
           <h3>Text Processing</h3>
           <a href="downloads.html">View the Notebooks</a>
           <p>Most of the data that I scraped is next to useless on its own. I needed to add more information to the dataset in order to make any visualizations or conclusions.</p>
-          <h5 style="margin-top:1rem">Basic Sentiment with Vader</h5>
+          <h4 style="margin-top:1rem">Basic Sentiment with Vader</h4>
           <p>I have very little experience in text-processing machine learning. Therefore, I decided that the best place to start would be an easy-to-use pre-trained model. It seems that the Vader model from the Natural Language Toolkit is widely used and accepted. I used the Text-Blob package to create a nice wrapper around the model, and was able to add the following columns:</p>
           <ul>
             <li>Title Polarity</li>
@@ -158,7 +158,7 @@
             <li>Body Subjectivity</li>
           </ul>
 
-          <h5>indico.io Models</h5>
+          <h4>indico.io Models</h4>
           <p>I needed a better sentiment model in my dataset, but I didn’t want to spend countless hours training custom models on my local machine. After some deliberation, I decided that I would use a pre-trained sentiment analysis API. I’ve used Google Cloud ML and Amazon Comprehend before, but their pricing structure is geared towards live applications. Ultimately I decided to try the apis on indicio.io. They have great reviews, and good academic discounts. (Luckily for me they were offering free API usage as recompense for previous outages.) Using their python wrapper, I added the following columns:</p>
           <ul>
             <li>Title Sentiment</li>
@@ -185,7 +185,7 @@
           <a href="downloads.html">View the Notebook</a>
           <p>With all of the grunt work out of the way, I began my analysis. The following are the questions I asked, the visualizations I used, and the conclusions I reached.</p>
 
-          <h5 style="margin-top:2rem">Is News Getting More Negative?</h5>
+          <h4 style="margin-top:2rem">Is News Getting More Negative?</h4>
           <p>It seems that the news these days has been getting more and more negative. With the wide variety of available news sources, those with the most shocking stories often profit. I set out to test this hypothesis: Is news getting more negative? Using Matplotlib, I created some visualizations to help identify trends.</p>
         </div>
       </div>
@@ -221,7 +221,7 @@
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>Findings</h6>
+          <h5>Findings</h5>
           <ul>
             <li>The sentiment of biased news is highly variable over time.</li>
             <li>The sentiment of biased news is not linear over time.</li>
@@ -233,7 +233,7 @@
       </div>
       <div class="row" style="margin-top:5rem" id="approval">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h5>Do the Sentiments of Articles about Trump Reflect His Approval Rating?</h5>
+          <h4>Do the Sentiments of Articles about Trump Reflect His Approval Rating?</h4>
           <p>President Donald Trump is on of the hottest topics of discussion in news, biased news included. In order to understand how the content of biased news articles interacts with his approval rating, will test the following:<br>Do the sentiments of articles talking about Trump reflect his approval rating in any way, and how is the sentiment of the two sites different on this issue?<br>I got approval rating information from the American Presidency Project <a href="https://www.presidency.ucsb.edu/statistics/data/presidential-job-approval">here.</a> Using this data and matplotlib, I created some visualizations to help identify trends.</p>
         </div>
       </div>
@@ -261,7 +261,7 @@
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-        <h6>Checking for Other Potential Correlations</h6>
+        <h5>Checking for Other Potential Correlations</h5>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
@@ -282,7 +282,7 @@
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>Findings</h6>
+          <h5>Findings</h5>
           <ul>
             <li>The sentiment of biased news does not correlate very well directly with Trump's approval rating.(.37)</li>
             <li>The sentiment of biased news over time does share most of the general shape of Trump's approval rating, suggesting that it could be significant in a model or after transformation.</li>
@@ -295,7 +295,7 @@
       <div class="row" style="margin-top:5rem" id="clickbait">
         <div class="col-lg-10 col-md-9 col-sm-8">
 
-          <h5>Clickbait!? Do Article's Titles Express More Emotion Than Their Bodies?</h5>
+          <h4>Clickbait!? Do Article's Titles Express More Emotion Than Their Bodies?</h4>
           <p>Clickbait is when titles or summaries of articles are designed to entice users to read. Headlines are often exaggerated, sensationalized, and sometimes downright false.<br>Like many other entertainment sources, politically biased news sites often employ clickbait tactics to drive readership.<br>By exploring the relationship between sentiment and emotion in articles' titles and bodies with plots, I hope to identify quantifiable characteristics of politically biased clickbait.</p>
         </div>
         <div class="row" style="margin-top:5rem">
@@ -338,7 +338,7 @@
         </div>
         <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>Findings</h6>
+          <h5>Findings</h5>
           <ul>
             <li>Biased news articles tend to have more anger in their titles than bodies.</li>
             <li>Biased news articles also tend to have more surprise in their titles than bodies</li>
@@ -351,13 +351,13 @@
       </div>
       <div class="row" style="margin-top:5rem" id="correlation">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h5>Is the Sentiment or Emotion of an Article Correlated with its Political Lean?</h5>
+          <h4>Is the Sentiment or Emotion of an Article Correlated with its Political Lean?</h4>
           <p>Both sites in my dataset are pretty extreme, so it will be interesting to see the results of these graphs.<br>I have no prediction as to how sentiment and political lean will interact. Ideally, the following plots will provide enough evidence to support findings.<br>I will first examine the emotion and sentiment of the two sites, and then explore the effects of political lean.</p>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>By Site</h6>
+          <h5>By Site</h5>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
@@ -392,7 +392,7 @@
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>By Political Lean</h6>
+          <h5>By Political Lean</h5>
         </div>
       </div>
       <div class="row" style="margin-top:1rem">
@@ -415,7 +415,7 @@
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h6>Findings</h6>
+          <h5>Findings</h5>
           <ul>
             <li>The emotions expressed on Think Progress and The Blaze are very similar.</li>
             <li>The sentiment density of Think Progress appears to have a minor bimodal distribution, while The Blaze's is right skewed, but mostly flat. This means that The Blaze has more articles with a moderate sentiment, and Think Progress has more articles at the extremes.</li>
@@ -427,7 +427,7 @@
       </div>
       <div class="row" style="margin-top:5rem" id="issues">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h5>On the Issues: What is the Sentiment of Articles about Issues from Right and Left-Wing sites?</h5>
+          <h4>On the Issues: What is the Sentiment of Articles about Issues from Right and Left-Wing sites?</h4>
           <p>There were many issues that I didn't have the time or data to do a robust analysis on, but I didn't want to omit them completely.<br>I decided the best route would be to include sentiment histograms, sentiment time plots, and a quick and dirty analysis for each issue.</p>
         </div>
       </div>
@@ -526,7 +526,7 @@
       <div class="row" style="margin-top:5rem" id="exploration">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <h3 style="margin-top:1rem">Descriptive Statistics</h3>
-          <h6>Full Dataset</h6>
+          <h5>Full Dataset</h5>
           <table border="1" class="table-dark">
             <thead>
               <tr style="text-align: right;">
@@ -1063,7 +1063,7 @@
               </tr>
             </thead>
           </table>
-          <h6>Think Progress</h6>
+          <h5>Think Progress</h5>
           <table class="table-dark">
             <thead>
               <tr style="text-align: right;">
@@ -1600,7 +1600,7 @@
               </tr>
             </thead>
           </table>
-          <h6>The Blaze</h6>
+          <h5>The Blaze</h5>
           <table border="1" class="table-dark">
             <thead>
               <tr>
