@@ -234,7 +234,7 @@
       <div class="row" style="margin-top:5rem" id="approval">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <h5>Do the Sentiments of Articles about Trump Reflect His Approval Rating?</h5>
-          <p>President Donald Trump is on of the hottests topics of discussion in news, biased news included. In order to understand how the content of biased news articles interacts with his approval rating, will test the following:<br>Do the sentiments of articles talking about Trump reflect his approval rating in any way, and how is the sentiment of the two sites different on this issue?<br>I got approval rating information from the American Presidency Project <a href="https://www.presidency.ucsb.edu/statistics/data/presidential-job-approval">here.</a> Using this data and matplotlib, I created some visualizations to help identify trends.</p>
+          <p>President Donald Trump is on of the hottest topics of discussion in news, biased news included. In order to understand how the content of biased news articles interacts with his approval rating, will test the following:<br>Do the sentiments of articles talking about Trump reflect his approval rating in any way, and how is the sentiment of the two sites different on this issue?<br>I got approval rating information from the American Presidency Project <a href="https://www.presidency.ucsb.edu/statistics/data/presidential-job-approval">here.</a> Using this data and matplotlib, I created some visualizations to help identify trends.</p>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
@@ -344,14 +344,14 @@
             <li>Biased news articles also tend to have more surprise in their titles than bodies</li>
             <li>Biased news articles tend to have much less sadness in their titles than their bodies.</li>
             <li>The total difference in emotion between titles and bodies is not significant</li>
-            <li>There is not a significant difference in sentiment defecit between The Blaze and Think Progress.</li>
+            <li>There is not a significant difference in sentiment deficit between The Blaze and Think Progress.</li>
           </ul>
         </div>
       </div>
       </div>
       <div class="row" style="margin-top:5rem" id="correlation">
         <div class="col-lg-10 col-md-9 col-sm-8">
-          <h5>Is the Sentiment or Emotion of an Article Correlated with its Policial Lean?</h5>
+          <h5>Is the Sentiment or Emotion of an Article Correlated with its Political Lean?</h5>
           <p>Both sites in my dataset are pretty extreme, so it will be interesting to see the results of these graphs.<br>I have no prediction as to how sentiment and political lean will interact. Ideally, the following plots will provide enough evidence to support findings.<br>I will first examine the emotion and sentiment of the two sites, and then explore the effects of political lean.</p>
         </div>
       </div>
@@ -398,13 +398,13 @@
       <div class="row" style="margin-top:1rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/leanSentiment/leanLines.png" width="100%"/>
-          <caption>The Policial Lean of Articles by Sentiment<br>This plot shows a pretty clear negative relationship between conservative lean and sentiment, and a positive one with grean lean and sentiment.<br>Libertarian and Liberal lean have no visibly identifiable trendline.</caption>
+          <caption>The Political Lean of Articles by Sentiment<br>This plot shows a pretty clear negative relationship between conservative lean and sentiment, and a positive one with green lean and sentiment.<br>Libertarian and Liberal lean have no visibly identifiable trend-line.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <img src="Assets/visualizations/leanSentiment/leanLinesReg.png" width="100%"/>
-          <caption>The Linear Regressed Policial Lean of Articles by Sentiment<br>As I suspected from the previous plot, there are two very strong relationships.<br>Green lean is highly correlated with article sentiment, and Conservative lean is very negatively correlated.<br>The other two leans have a very slight negative correlation.</caption>
+          <caption>The Linear Regressed Political Lean of Articles by Sentiment<br>As I suspected from the previous plot, there are two very strong relationships.<br>Green lean is highly correlated with article sentiment, and Conservative lean is very negatively correlated.<br>The other two leans have a very slight negative correlation.</caption>
         </div>
       </div>
       <div class="row" style="margin-top:5rem">
@@ -482,7 +482,7 @@
                 <td><img src="Assets/visualizations/issues/guns/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/guns/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/guns/blazePlot.png" width="150vw"></td>
-                <td>Neither site has obvious trends in the histograms. However, the plots over time are very telling. In October of 2017, the worst mass shooting in American history took place in Las Vegas, Nevada. There was an accompanying massive drop in sentiment on Think Progress, and an equally masive spike on The Blaze.</td>
+                <td>Neither site has obvious trends in the histograms. However, the plots over time are very telling. In October of 2017, the worst mass shooting in American history took place in Las Vegas, Nevada. There was an accompanying massive drop in sentiment on Think Progress, and an equally massive spike on The Blaze.</td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">Education</th>
@@ -490,7 +490,7 @@
                 <td><img src="Assets/visualizations/issues/education/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazePlot.png" width="150vw"></td>
-                <td>Both sites' histograms are right-skewed, indicating a abnormal negative sentiment. Neither site has an obvious trend in sentiment over time, but Think Progress drops when Betsy Devos is confirmed at Secretary of Education, and The Blaze spikes when a federal lawsuit against Title IX claims it is ‘offensive’ and ‘discriminatory’.</td>
+                <td>Both sites' histograms are right-skewed, indicating an abnormal negative sentiment. Neither site has an obvious trend in sentiment over time, but Think Progress drops when Betsy Devos is confirmed at Secretary of Education, and The Blaze spikes when a federal lawsuit against Title IX claims it is ‘offensive’ and ‘discriminatory’.</td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">Religion</th>
@@ -498,10 +498,29 @@
                 <td><img src="Assets/visualizations/issues/religion/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/religion/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/religion/blazePlot.png" width="150vw"></td>
-                <td>Both sites' histograms are right-skewed, indicating a abnormal negative sentiment. However, The Blaze has more of a bimodal distribution than Think Progress, indicating a mix of positive and negative articles with few in-between.<br>The drop in The Blaze around August 2017 is due to a few stories with less than .03 sentiment. They include a gay store owner kicking out Christian evangelists handing out pamphlets and mainstream media reaction to a picture of Trump praying with clergy<br>The drop in Think Progress around June 2017 is due to two articles about a Mississippi funeral home refusing to pick up and cremate the body of a gay man due to religous conviction and the denial of a court case against the law that allowed them to do so.</td>
+                <td>Both sites' histograms are right-skewed, indicating an abnormal negative sentiment. However, The Blaze has more of a bimodal distribution than Think Progress, indicating a mix of positive and negative articles with few in-between.<br>The drop in The Blaze around August 2017 is due to a few stories with less than .03 sentiment. They include a gay store owner kicking out Christian evangelists handing out pamphlets and mainstream media reaction to a picture of Trump praying with clergy<br>The drop in Think Progress around June 2017 is due to two articles about a Mississippi funeral home refusing to pick up and cremate the body of a gay man due to religious conviction and the denial of a court case against the law that allowed them to do so.</td>
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+      <div class="row" style="margin-top:5rem" id="summary">
+        <div class="col-lg-10 col-md-9 col-sm-8">
+          <h3>Summary</h3>
+          <p>In summary, these were the patterns identified:</p>
+          <ul>
+            <li>It cannot be concluded that the sentiment of biased news is increasing or decreasing over time. It is highly variable and does not lend itself to linear analysis.</li>
+            <li>Both Liberal and Conservative biased media sites express very similar emotions, and their article titles often include more anger and surprise than their article bodies.</li>
+            <li>In general, articles with a higher "green" lean have higher sentiment scores, while those with a higher "conservative" lean have lower sentiment scores.</li>
+            <li>The sentiment of articles about Donald Trump do not correlate highly with his approval rating, but there are interesting relationships over time that deserve further analysis.</li>
+            <li>The difference between overall conservative and liberal biased news sentiment on issues is usually not signicant, but over time, is highly reactive to current events.</li>
+          </ul>
+          <p>Through the use of pre-trained text analysis models, I was able to identify some trends and relationships in the data. However, the dataset is incredibly nuanced and deserves further analysis.<br>Further analysis is warranted on the following questions:</p>
+          <ul>
+            <li>How does the sentiment trend and emotional content of highly biased news sources compare to that of mainstream media?</li>
+            <li>What other factors could be added to the model with Trump's approval rating and the sentiment of articles referencing him. Would mainstream media sentiment be a better predictor?</li>
+            <li>Does the "trending" nature of topics, defined as frequency of articles tagged with a keyword, affect the extremity of the sentiment and emotion expressed in relevant articles?</li>
+          </ul>
         </div>
       </div>
       <div class="row" style="margin-top:5rem" id="exploration">
@@ -2118,13 +2137,10 @@
               </tr>
             </thead>
           </table>
-          <h3>Exploratory Analysis</h3>
-          <h6>Correlation Matrix</h6>
+          <h3>Correlation Matrixes</h3>
           <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~NoahBJohnson/2.embed"></iframe>
           <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~NoahBJohnson/4.embed"></iframe>
           <iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~NoahBJohnson/6.embed"></iframe>
-
-
 
         </div>
       </div>
