@@ -68,29 +68,37 @@
       <div class="row" style="margin-top:5rem" id="overview">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <h3>Overview</h3>
+
+          <h5>Background</h5>
           <p><a href="https://news.gallup.com/poll/225755/americans-news-bias-name-neutral-source.aspx">According to Gallup polls</a>, 45% of Americans see “a great deal of bias” in the current news media. For reference, that number was 25% in 1989. With numbers like it’s easy to see that the concept of “fake news” is relevant to many Americans, but how can we measure bias in the media?</p>
+          <p>Sites like mediabiasfactcheck.com try to examine the bias of various news outlets and report on their findings. They use a variety of methods including identifying biased wording, story choices, and factuality. There are a few other sites with different methodologies, but the reality of social media echo-chambers means that their impact on media consumers is negligible.</p>
 
-          <p>Sites like mediabiasfactcheck.com try to examine the bias of various news outlets and report on their findings. They use a variety of methods including identifying biased wording, story choices, and factuality. There are a few other sites with different methodologies, but the reality of social media echo-chambers means that their impact is negligible.</p>
+          <h5>Procedure</h5>
+          <p>In this report, I collected and examined articles from two biased news sites. Theblaze.com is a conservative news platform founded by conservative commentator Glenn Beck. On the liberal side, thinkprogress.org is a progressive political news blog run by the Center for American Progress, according to wikipedia, a public policy research and advocacy organization which presents a liberal viewpoint on economic and social issues. Both of these sites are near the extreme end of their respective political biases, and they both often have their content go viral on social media. This makes them a perfect couple for analyzing the issue of media bias.</p>
+          <p>I used the pre-trained text analysis models from <a href="https://indico.io/">indico.io</a> and the Natural Language Toolkit(NLTK) to generate variables for analysis. Using these variables, I created visualizations using matplotlib and seaborn to visually identify patterns in the data. The methods used in this report, although quantitative, are not neccessarily statistically valid, and may include subjective suppositions.</p>
 
-          <p>In this report I will examine articles from two biased news sites. theblaze.com is a conservative news platform founded by Glenn Beck. On the liberal side, thinkprogress.org is a progressive political news blog run by the Center for American Progress. Both of these sites are near the extreme end of their respective political biases, and they both often have their content go viral on social media. This makes them a perfect couple for analyzing the issue of media bias.</p>
+          <div class="row">
+              <div class="col-lg-3 col-md-3 col-sm-3">
+                <img src="Assets/theblaze.png" width="225vw"/>
+                <img src="Assets/blazebias.png" width="225vw" style="background: white"/>
+                <i>mediabiasfactcheck.com</i>
+              </div>
+              <div class="col-lg-3 col-md-3 col-sm-3">
+                <img src="Assets/thinkprogress.png" width="225vw"/>
+                <img src="Assets/tpbias.png" width="225vw" style="background: white"/>
+                <i>mediabiasfactcheck.com</i>
+              </div>
+          </div>
+          <h5 style="margin-top:2rem">Potential Algorithmic Bias</h5>
+          <p>The models I used for feature construction were pre-trained on unknown data sets. Due to the nature of pre-trained models, there may be a degree of bias against various viewpoints in the results of my analysis. I've done my best to mitigate this issue by normalizing where possible. However, there still remains a potential for bias, as the models were not tested for objectivity.</p>
+
+          <h5>Legal</h5>
+          <p>The terms of service on theblaze.com specifically prohibit the type of programmatic access and scraping used in this project. Both sites also prohibit archiving, downloading, or reproducing their content.</p>
+          <p>The law on programmatic scraping is murky at best, but I consider my access and use of article content and media to be protected under fair use and the first amendment for the sole purpose of academic research. This position is supported in earnest by <a href="https://h2o.law.harvard.edu/collages/45977">CHRISTIAN W. SANDVIG, et al. v. JEFFERSON B. SESSIONS III, in his official capacity as Attorney General of the United States.</a></p>
+          <p>The analysis provided in this report is solely the responsibility of the author, and does not represent the views or opinions of Luther College or its faculty.
         </div>
       </div>
 
-
-      <div class="row">
-          <div class="col-lg-3 col-md-3 col-sm-3">
-            <img src="Assets/theblaze.png" width="225vw"/>
-            <img src="Assets/blazebias.png" width="225vw" style="background: white"/>
-            <i>mediabiasfactcheck.com</i>
-          </div>
-          <div class="col-lg-3 col-md-3 col-sm-3">
-            <img src="Assets/thinkprogress.png" width="225vw"/>
-            <img src="Assets/tpbias.png" width="225vw" style="background: white"/>
-            <i>mediabiasfactcheck.com</i>
-          </div>
-
-
-      </div>
       <div class="row" style="margin-top:5rem" id="collection">
         <div class="col-lg-10 col-md-9 col-sm-8">
 
@@ -381,7 +389,6 @@
           <p>Both Think Progress and The Blaze have very right-skewed histograms for sentiment. Due to the severity of the deviation of the skew from a normal distribution, it's safe to say that the sites both have mostly negative content.<br>However, the two sites' sentiment histograms are not identical. The Blaze's histogram is basically flat at a .75 density at .35 and above. Think Progress almost gets down to .5 density at .5 sentiment, but then it gets back up past 1 density at 1.0 sentiment, forming what looks like a bimodal distribution.<br>The net result is a small difference in measures of central tendency, but a large qualitative difference.</p>
         </div>
       </div>
-
       <div class="row" style="margin-top:5rem">
         <div class="col-lg-10 col-md-9 col-sm-8">
           <h6>By Political Lean</h6>
@@ -423,7 +430,7 @@
           <p>There were many issues that I didn't have the time or data to do a robust analysis on, but I didn't want to omit them completely.<br>I decided the best route would be to include sentiment histograms, sentiment time plots, and a quick and dirty analysis for each issue.</p>
         </div>
       </div>
-      <div class="row" style="margin-top:5rem" id="issues">
+      <div class="row" style="margin-top:5rem">
         <div class="col-lg-12 col-md-12 col-sm-12">
           <table class="table table-hover">
             <col>
@@ -466,7 +473,7 @@
                 <td><img src="Assets/visualizations/issues/economy/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/economy/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/economy/blazePlot.png" width="150vw"></td>
-                <td></td>
+                <td>Both sites' histograms are right-skewed, indicating a primarilay negative sentiment. The plot of The Blaze sentiment is trending downward, with a spike when Trump declared trade war. The plot of Think Progress sentiment is trending upward, with a spike around August 2017 and 2018.</td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">Guns</th>
@@ -474,7 +481,7 @@
                 <td><img src="Assets/visualizations/issues/guns/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/guns/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/guns/blazePlot.png" width="150vw"></td>
-                <td></td>
+                <td>Neither site has obvious trends in the histograms. However, the plots over time are very telling. In October of 2017, the worst mass shooting in American history took place in Las Vegas, Nevada. There was an accompanying massive drop in sentiment on Think Progress, and an equally masive spike on The Blaze.</td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">Education</th>
@@ -482,7 +489,7 @@
                 <td><img src="Assets/visualizations/issues/education/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/education/blazePlot.png" width="150vw"></td>
-                <td></td>
+                <td>Both sites' histograms are right-skewed, indicating a abnormal negative sentiment. Neither site has an obvious trend in sentiment over time, but Think Progress drops when Betsy Devos is confirmed at Secretary of Education, and The Blaze spikes when a federal lawsuit against Title IX claims it is ‘offensive’ and ‘discriminatory’.</td>
               </tr>
               <tr class="table-dark">
                 <th scope="row">Religion</th>
@@ -490,7 +497,7 @@
                 <td><img src="Assets/visualizations/issues/religion/tpPlot.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/religion/blazeHist.png" width="150vw"></td>
                 <td><img src="Assets/visualizations/issues/religion/blazePlot.png" width="150vw"></td>
-                <td></td>
+                <td>Both sites' histograms are right-skewed, indicating a abnormal negative sentiment. However, The Blaze has more of a bimodal distribution than Think Progress, indicating a mix of positive and negative articles with few in-between.<br>The drop in The Blaze around August 2017 is due to a few stories with less than .03 sentiment. They include a gay store owner kicking out Christian evangelists handing out pamphlets and mainstream media reaction to a picture of Trump praying with clergy<br>The drop in Think Progress around June 2017 is due to two articles about a Mississippi funeral home refusing to pick up and cremate the body of a gay man due to religous conviction and the denial of a court case against the law that allowed them to do so.</td>
               </tr>
             </tbody>
           </table>
